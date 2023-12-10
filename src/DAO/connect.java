@@ -18,23 +18,19 @@ import com.mysql.jdbc.Driver;
 public class connect {
     Connection con = null;
     public connect(){
-        try
-{
+    
     // db parameters
-    String url       = "jdbc:mysql://localhost:3306/kho?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false";
+    String url       = "jdbc:mysql://localhost:3306/quanlykho";
     String user      = "root";
     String password  = "";
-     
+         try {
     // create a connection to the database
     con = DriverManager.getConnection(url, user, password);
     // more processing here
     // ...  
-} 
+        } 
   catch(SQLException e) {
    System.out.println(e.getMessage());
-} 
+  } 
     }
-
-
-    
 }

@@ -102,6 +102,7 @@ public class nsxDAO extends connect{
               pre.setInt(4, nsx.getId());
               return pre.executeUpdate();
         } catch (Exception e) {
+            
         }
       
         return -1;
