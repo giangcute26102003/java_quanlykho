@@ -108,7 +108,7 @@ public class nsxDAO extends connect{
     }
      
      public int delete(int idnsx){
-        String sql = "DELETE FROM `nha_san_xuat` WHERE id= '"+idnsx+"' ";
+        String sql = "updaye  `nha_san_xuat` 'status' = 0 WHERE = "+idnsx+"' ";
         try {
               PreparedStatement pre = con.prepareStatement(sql);
               return pre.executeUpdate();

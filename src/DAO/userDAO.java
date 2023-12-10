@@ -19,7 +19,7 @@ import java.sql.ResultSet;
         user nd = null;
         try
         {
-            String sql="select * from user where user_name=? and pass_words=?";
+            String sql="select * from user where user_name=? and pass_words=? where s";
             PreparedStatement pre = con.prepareStatement(sql);
             pre.setString(1, username);
             pre.setString(2, password);
@@ -27,8 +27,8 @@ import java.sql.ResultSet;
             if(rs.next())
             {
                 nd= new user();
-                 nd.setId(rs.getInt(1));
-                 nd.setName(rs.getString(2));
+                 nd.setId(rs.getInt("id"));
+                 nd.setName(rs.getString("name"));
                  nd.setUser_name(rs.getString(2));
                  nd.setPass_words(rs.getString(3));
                  nd.setLevel(rs.getInt(4));
