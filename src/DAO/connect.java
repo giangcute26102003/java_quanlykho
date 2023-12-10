@@ -18,19 +18,18 @@ import com.mysql.jdbc.Driver;
 public class connect {
     Connection con = null;
     public connect(){
-    
     // db parameters
     String url       = "jdbc:mysql://localhost:3306/quanlykho";
     String user      = "root";
     String password  = "";
-         try {
+    
+    try {
     // create a connection to the database
-    con = DriverManager.getConnection(url, user, password);
+        con = DriverManager.getConnection(url, user, password);
     // more processing here
     // ...  
-        } 
-  catch(SQLException e) {
-   System.out.println(e.getMessage());
-  } 
+    } catch(SQLException e) {
+        System.out.println(e.getMessage());
+    } 
     }
 }

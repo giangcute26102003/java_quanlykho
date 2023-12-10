@@ -21,40 +21,50 @@ public class sanphamDAO extends connect{
     public ArrayList<san_pham> allsanpham(){
         ArrayList<san_pham> allsp = new ArrayList<san_pham>();
         try {
-            String sql = "Select * from san_pham";
+            String sql = "Select * from sanpham";
             PreparedStatement pre = con.prepareStatement(sql);
             ResultSet  rs = pre.executeQuery(sql);
             while(rs.next()){
                 san_pham sp = new san_pham();
-                sp.setId(rs.getInt(1));
-                sp.setName(rs.getString(2));
-                sp.setDesc(rs.getString(3));
-                sp.setPhoto(rs.getString(4));
-                sp.setId_nsx(rs.getInt(5));
+                
+                sp.setId(rs.getInt("id"));
+                sp.setName(rs.getString("name"));
+                sp.setDesc(rs.getString("desc"));
+                sp.setPhoto(rs.getString("photo"));
+                sp.setPrice(rs.getInt("price"));
+                sp.setQuantity(rs.getInt("quantity"));
+                sp.setStatus(rs.getInt("status"));
+                sp.setId_nsx(rs.getInt("id_nsx"));
                 
                 allsp.add(sp);
             }
         } catch (Exception e) {
+            e.printStackTrace();
         }
         return allsp;
     }
     public ArrayList<san_pham> allsanphambyId(){
         ArrayList<san_pham> allsp = new ArrayList<san_pham>();
         try {
-            String sql = "Select * from san_pham where id= ?";
+            String sql = "Select * from sanpham where id= ?";
             PreparedStatement pre = con.prepareStatement(sql);
             ResultSet  rs = pre.executeQuery(sql);
             while(rs.next()){
                 san_pham sp = new san_pham();
-                sp.setId(rs.getInt(1));
-                sp.setName(rs.getString(2));
-                sp.setDesc(rs.getString(3));
-                sp.setPhoto(rs.getString(4));
-                sp.setId_nsx(rs.getInt(5));
+             
+                sp.setId(rs.getInt("id"));
+                sp.setName(rs.getString("name"));
+                sp.setDesc(rs.getString("desc"));
+                sp.setPhoto(rs.getString("photo"));
+                sp.setPrice(rs.getInt("price"));
+                sp.setQuantity(rs.getInt("quantity"));
+                sp.setStatus(rs.getInt("status"));
+                sp.setId_nsx(rs.getInt("id_nsx"));
                 
                 allsp.add(sp);
             }
         } catch (Exception e) {
+            e.printStackTrace();
         }
         return allsp;
     }
@@ -85,17 +95,22 @@ public class sanphamDAO extends connect{
 //       return vec;
 //   }
     public int luusp(san_pham sp){
-        String sql = "INSERT INTO `san_pham`(`id`, `name`, `desc`, `photo`, `id_nsx`) VALUES(null,?,?,?,?)";
+        String sql = "INSERT INTO `sanpham`(`name`, `desc`, `photo`, `price`, `quantity`, `status`, `id_nsx`) VALUES(?,?,?,?,?,?,?)";
         try {
-              PreparedStatement pre = con.prepareStatement(sql);
-              pre.setString(1, sp.getName());
-              pre.setString(2, sp.getDesc());
-              pre.setString(3, sp.getPhoto());
-              pre.setInt(4, sp.getId_nsx());
-              return pre.executeUpdate();
+            PreparedStatement pre = con.prepareStatement(sql);
+            pre.setString(1, sp.getName());
+            pre.setString(2, sp.getDesc());
+            pre.setString(3, sp.getPhoto());
+            pre.setInt(4, sp.getPrice());
+            pre.setInt(5, sp.getQuantity());
+            pre.setInt(6, sp.getStatus());
+            pre.setInt(7, sp.getId_nsx());
+
+            return pre.executeUpdate();
         } catch (Exception e) {
+            e.printStackTrace();
         }
-      
+   
         return -1;
     }
 }

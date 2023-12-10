@@ -20,6 +20,7 @@ import java.sql.ResultSet;
         try
         {
             String sql="select * from user where user_name=? and pw=?";
+
             PreparedStatement pre = con.prepareStatement(sql);
             pre.setString(1, username);
             pre.setString(2, password);
@@ -27,17 +28,16 @@ import java.sql.ResultSet;
             if(rs.next())
             {
                 nd= new user();
-                 nd.setId(rs.getInt(1));
-                 nd.setName(rs.getString(2));
-                 nd.setUser_name(rs.getString(2));
-                 nd.setPass_words(rs.getString(3));
-                 nd.setLevel(rs.getInt(4));
-             }
-        }
-            catch (Exception ex)
-                    {
-                        ex.printStackTrace();
-                    }            
+                nd.setId(rs.getInt("id"));
+                nd.setName(rs.getString("name"));
+                nd.setUser_name(rs.getString("user_name"));
+                nd.setPw(rs.getString("pw"));
+                nd.setLevel(rs.getInt("level"));
+                nd.setStatus(rs.getInt("status"));
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }                    
         return nd;
     }
 
