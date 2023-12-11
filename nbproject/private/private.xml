@@ -3,7 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/E:/java/NetBeansProjects/quanlykho_v1/src/GUI/giaodienchinh.java</file>
+            <file>file:/E:/java/NetBeansProjects/quanlykho_v1/src/GUI/themnsx.java</file>
+            <file>file:/E:/java/NetBeansProjects/quanlykho_v1/src/GUI/tonkho.java</file>
+            <file>file:/E:/java/NetBeansProjects/quanlykho_v1/src/DAO/connect.java</file>
+            <file>file:/E:/java/NetBeansProjects/quanlykho_v1/src/DAO/userDAO.java</file>
+            <file>file:/E:/java/NetBeansProjects/quanlykho_v1/src/GUI/export_pdf.java</file>
+            <file>file:/E:/java/NetBeansProjects/quanlykho_v1/src/GUI/nhaphang.java</file>
+            <file>file:/E:/java/NetBeansProjects/quanlykho_v1/src/DAO/Tesst.java</file>
             <file>file:/E:/java/NetBeansProjects/quanlykho_v1/src/GUI/sanpham_detail.java</file>
+            <file>file:/E:/java/NetBeansProjects/quanlykho_v1/src/DAO/sanphamDAO.java</file>
+            <file>file:/E:/java/NetBeansProjects/quanlykho_v1/src/DAO/nsxDAO.java</file>
+            <file>file:/E:/java/NetBeansProjects/quanlykho_v1/src/GUI/dangnhap.java</file>
         </group>
     </open-files>
 </project-private>
